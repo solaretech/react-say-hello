@@ -1,14 +1,10 @@
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const arr = [1, 3, 2, 4, 6, 5, 8, 7];
 
-const greet = async () => {
-  console.log('おやすみ');
-  try {
-    await sleep(2000);
-    console.log('起きた');
-    console.log('おはよう！');
-  }catch(err){
-    console.error('睡眠例外です：', err);
-  }
-}
-
-greet();
+console.log(arr.map(n => n * 2));
+console.log(arr.filter(n => n%3 === 0));
+console.log(arr.find(n => n > 4));
+console.log(arr.every(n => n !== 0));
+console.log(arr.some(n => n > 8));
+console.log(arr.includes(5));
+console.log(arr.reduce((n, m) => n + m));
+console.log(arr.sort((n, m) => n > m ? 1 : -1));
