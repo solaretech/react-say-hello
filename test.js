@@ -1,6 +1,12 @@
-const hof = (ex, fn) => {
-  return n => fn(n + ex);
-};
+class Counter {
+  constructor(initialCount){
+    this.c = initialCount;
+  }
 
-const plusOneDouble = hof(1, n => n * 2);
-console.log(plusOneDouble(4));
+  increment() {
+    return this.c++;
+  }
+}
+
+const counter = new Counter(1);
+console.log(counter.increment(), counter.increment(), counter.increment());
