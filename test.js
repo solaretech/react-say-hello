@@ -1,14 +1,10 @@
-function* rangeGenerator(end, start = 0){
-  let n = 0;
+const multi = (n, m) => n * m;
+console.log(multi(2, 4));
 
-  for (let i = start; i < end; i++){
-    n += 1;
-    yield i;
-  }
+const curriedMulti = n => {
+  return m => n * m;
 }
+console.log(curriedMulti(2)(4));
 
-const gen = rangeGenerator(3);
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
+const simpleCurriedMulti = n => m => n * m;
+console.log(simpleCurriedMulti(2)(4));
