@@ -1,10 +1,14 @@
-const counterMaker = (initialCount) => {
-  let c = initialCount;
-  console.log(c);
-  const increment = () => c++;
+function* rangeGenerator(end, start = 0){
+  let n = 0;
 
-  return increment;
+  for (let i = start; i < end; i++){
+    n += 1;
+    yield i;
+  }
 }
 
-const count = counterMaker(1);
-console.log(count(), count(), count());
+const gen = rangeGenerator(3);
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
