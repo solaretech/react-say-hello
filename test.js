@@ -1,13 +1,15 @@
-const { walkUpBindingElementsAndPatterns } = require("typescript");
-
-const wakeUp = ms => {
-  setTimeout(() => {console.log('起きた')}, ms);
-};
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const greet = () => {
   console.log('おやすみ');
-  wakeUp(2000);
-  console.log('おはよう！');
+  sleep(2000)
+  .then(() => {
+    console.log('起きた');
+    console.log('おはよう！');
+  })
+  .catch(err => {
+    console.error('睡眠例外です：', err);
+  })
 }
 
 greet();
