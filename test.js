@@ -1,12 +1,10 @@
-class Counter {
-  constructor(initialCount){
-    this.c = initialCount;
-  }
+const counterMaker = (initialCount) => {
+  let c = initialCount;
+  console.log(c);
+  const increment = () => c++;
 
-  increment() {
-    return this.c++;
-  }
+  return increment;
 }
 
-const counter = new Counter(1);
-console.log(counter.increment(), counter.increment(), counter.increment());
+const count = counterMaker(1);
+console.log(count(), count(), count());
