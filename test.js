@@ -2,7 +2,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const greet = async () => {
   console.log('おやすみ');
-  sleep(2000)
   try {
     await sleep(2000);
     console.log('起きた');
