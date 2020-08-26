@@ -1,3 +1,13 @@
-const foo = 65536;
-const obj = { foo, bar: 4096 };
-console.log(obj);
+const { walkUpBindingElementsAndPatterns } = require("typescript");
+
+const wakeUp = ms => {
+  setTimeout(() => {console.log('起きた')}, ms);
+};
+
+const greet = () => {
+  console.log('おやすみ');
+  wakeUp(2000);
+  console.log('おはよう！');
+}
+
+greet();
